@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap');
+/* Fonts */
+/*
+font-family: 'Passions Conflict', cursive;
+*/
+:root {
+    --font-choice: Passion Conflict;
+    --header-color: #f8b195;
+    --nav-color: #f67280;
+    --nav2-color: #c06c84;
+    --nav3-color: #6c5b7b;
+    --body-color: #355c7d;
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-choice);
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--body-color);
+}
+
+.container {
+    position: relative; 
+    display: flex;
+    padding: 80px 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 180px;
+    background: var(--header-color);
+    transition: 0.5s;
+}
+
+.card:hover {
+    height: 450px;
+}
+
+.card .lines {
+    position: absolute;
+    insert: 0;
+    background: var(--nav3-color);
+    overflow: hidden;
+}
+
+.card .lines::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent,#f67280,#f67280,#f67280,transparent);
+    animation: animate 4s linear infinite;
+    animation-play-state: paused;
+}
+
+.card:hover .lines::before {
+    animation-play-state: running;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(360deg);
+
+    }
+}
+
+.card .lines::after {
+    content: '';
+    position: absolute;
+    insert: 3px;
+    background: var(--nav2-color);
+}
